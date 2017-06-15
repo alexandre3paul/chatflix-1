@@ -74,7 +74,14 @@ class Recommendation:
 
     # Pose une question à l'utilisateur
     def ask_question(self, user):
-        return "Vous aimez les films ?"
+        booleansuper = randint(0, 1)
+        returnphrase = ""
+		
+        if(booleansuper == 0):
+            returnphrase = "Vous aimez le seigneur des anneaux ?"
+        else:
+            returnphrase = "Vous aimez Harry Potter ?"
+        return returnphrase
 
     # Calcule la similarité entre 2 utilisateurs
     @staticmethod
