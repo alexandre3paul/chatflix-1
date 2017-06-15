@@ -74,14 +74,15 @@ class Recommendation:
 
     # Pose une question à l'utilisateur
     def ask_question(self, user):
-        booleansuper = randint(0, 1)
-        returnphrase = ""
+        indexRandomMovie = randint(0, len(self.movies_list))
+        nameMovie = ""
 		
-        if(booleansuper == 0):
-            returnphrase = "Vous aimez le seigneur des anneaux ?"
-        else:
-            returnphrase = "Vous aimez Harry Potter ?"
-        return returnphrase
+        for movie in self.movies:
+            if(movie.id == indexRandomMovie):
+                nameMovie = movie.title
+                break
+		
+        return "Vous aimez " + nameMovie + " ?"
 
     # Calcule la similarité entre 2 utilisateurs
     @staticmethod
